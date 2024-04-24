@@ -135,9 +135,8 @@ app.get('/question/:value1',(req,res)=>
 app.get("/submitdata",async(req,res)=>
 {
   console.log(data);  
-  const createTable = await clientConfig.query('CREATE TABLE IF NOT EXISTS usersurvey(userage VARCHAR,usergender VARCHAR,usercartype VARCHAR,usercarmodel VARCHAR);');
+  const createTable = await clientConfig.query("CREATE TABLE IF NOT EXISTS usersurvey(userId SERIAL PRIMARY KEY, userage VARCHAR NOT NULL,usergender VARCHAR NOT NULL,usercartype VARCHAR NOT NULL,usercarmodel VARCHAR NOT NULL);");
   const addData=await clientConfig.query('INSERT INTO usersurvey(userage,usergender,usercartype,usercarmodel) VALUES($1,$2,$3,$4)',[data[0],data[1],data[2],data[3]]);
-  console.log(addData.rows);
   data=[];
  console.log("success");
  res.json({message:'success'});

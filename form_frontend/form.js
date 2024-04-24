@@ -35,7 +35,6 @@ ${currQuestion.options.map((option)=>(`<input type="radio" name="ageInput" class
      })
  };
 }
-
 const nextButton=document.getElementById("nextButton");
 nextButton.addEventListener("click",async()=>
 {
