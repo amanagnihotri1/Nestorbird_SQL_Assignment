@@ -8,11 +8,11 @@ app.use(express.json());
 app.use(cors());
 const { Client } = pg;
 const clientConfig = new Client({
-  host: 'localhost',
-  port: 5432,
-  database: 'postgres',
-  user: 'postgres',
-  password: 'Kalaana1@'
+  host: '',
+  port: ,
+  database: '',
+  user: '',
+  password: ''
 });
 clientConfig.connect();
 app.get("/question",(req,res)=>
